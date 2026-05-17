@@ -128,6 +128,53 @@ pubspec.yaml
 .gitignore
 ```
 
+## API — `UnifiedMultiStepForm`
+
+Use `UnifiedMultiStepForm` as the shell that hosts your `MultiStepFormPage` pages. Key constructor parameters:
+
+- `pages` (List<MultiStepFormPage>): The list of steps shown in order. Each `MultiStepFormPage` contains a `GlobalKey<FormState>` and a `builder` that returns the step UI.
+
+- `controller` (UnifiedMultiStepFormController?): Optional controller for programmatic navigation and registering field values/validators. If omitted, the widget creates its own controller.
+
+- `onSubmit` (VoidCallback?): Called after the final step is validated (including async validators) and the form is ready to submit.
+
+- `onStepChanged` (ValueChanged<int>?): Callback when the active step index changes. Useful to update surrounding UI.
+
+- `initialStep` (int): Zero-based initial step index to start the form on.
+
+- `padding` (EdgeInsetsGeometry): Padding applied around each step's body (default: horizontal 16).
+
+- `indicatorActiveColor` / `indicatorInactiveColor` (Color?): Colors for active/inactive step indicators.
+
+- `indicatorType` (IndicatorType): Indicator style — `dots`, `numbers`, or `linear`.
+
+- `usePageView` (bool): When true, the widget renders steps with `PageView` (swipeable, with transitions). When false (default), it uses `IndexedStack` to preserve widget state while hiding inactive pages.
+
+- `transitionType` (TransitionType): Controls the `PageView` animation style when `usePageView` is true. Options: `none`, `slide`, `fade`, `vertical`.
+
+- `transitionDuration` (Duration): Duration of page transition animations (default 300 ms).
+
+- `nextButtonText`, `previousButtonText`, `submitButtonText` (String): Override the default button labels.
+
+Example snippet:
+
+```dart
+final step0Key = GlobalKey<FormState>();
+final step1Key = GlobalKey<FormState>();
+
+UnifiedMultiStepForm(
+  pages: [
+    MultiStepFormPage(formKey: step0Key, title: 'Step 1', builder: (_) => StepOne()),
+    MultiStepFormPage(formKey: step1Key, title: 'Step 2', builder: (_) => StepTwo()),
+  ],
+  usePageView: true,
+  indicatorType: IndicatorType.dots,
+  transitionType: TransitionType.slide,
+  onSubmit: () => print('submit'),
+);
+```
+
+
 ## Testing
 
 Run package tests with:
@@ -142,38 +189,6 @@ flutter test
 - Add tests for new controller or widget behavior
 - Update `CHANGELOG.md`
 - Verify `flutter analyze` and `flutter test`
-
-## License
-
-## Publishing to pub.dev
-
-- Before publishing, ensure the following in your package root:
-  - `pubspec.yaml` contains `name`, `description`, `version`, `environment` (Dart/Flutter SDK), `repository`/`homepage`, and `license`.
-  - Include `README.md`, `CHANGELOG.md`, `LICENSE`, an `example/` folder, and tests under `test/`.
-  - Do NOT have `publish_to: none` in `pubspec.yaml`.
-  - Bump the package `version` for each new release and update `CHANGELOG.md`.
-
-- Local checks (run from package root):
-
-```bash
-flutter analyze
-flutter test
-flutter pub publish --dry-run
-```
-
-- If the dry-run succeeds, publish interactively:
-
-```bash
-flutter pub publish
-```
-
-- Authentication: `flutter pub publish` is interactive and will open a browser to sign in the first time. For CI/automation, create an API token on pub.dev (Account → API access) and follow pub.dev documentation to configure your CI to use that token.
-
-- After a successful publish:
-  - Tag the release in your VCS (e.g., `git tag vX.Y.Z` and `git push --tags`).
-  - Verify the package page on https://pub.dev and update any README screenshots or metadata as needed.
-
-See pub.dev docs for advanced publishing / CI setup.
 
 ## License
 

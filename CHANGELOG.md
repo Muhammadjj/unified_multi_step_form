@@ -1,8 +1,8 @@
-## 1.0.0
+## 1.0.1
 
 - Initial version.
 
-## 1.1.0
+## 1.1.1
 
 - Added indicator styles: dots, numbers, and linear progress.
 - Added `PageView` mode and page transition support.
