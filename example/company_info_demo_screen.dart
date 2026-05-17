@@ -628,11 +628,7 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
         title: const Text('Demo Submit'),
         content: SingleChildScrollView(
           child: Text(
-            const JsonEncoder.withIndent('  ').convert({
-                  'note':
-                      'Payload is generated from the multi-step form state.',
-                }) +
-                '\n\n${payload.toString()}',
+            '${const JsonEncoder.withIndent('  ').convert({'note': 'Payload is generated from the multi-step form state.'})}\n\n${payload.toString()}',
             style: const TextStyle(fontSize: 13),
           ),
         ),
