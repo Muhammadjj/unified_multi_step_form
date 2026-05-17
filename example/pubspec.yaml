@@ -1,0 +1,16 @@
+name: unified_multi_step_form_example
+description: Example app for unified_multi_step_form.
+publish_to: none
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^0.8.7+6
+  unified_multi_step_form:
+    path: ..
+
+flutter:
+  uses-material-design: true

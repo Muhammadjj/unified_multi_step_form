@@ -5,19 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:unified_multi_step_form/unified_multi_step_form.dart';
 
-void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(home: CompanyInfoDemoScreen());
-  }
-}
-
 class CompanyInfoDemoScreen extends StatefulWidget {
   const CompanyInfoDemoScreen({super.key});
 
@@ -203,9 +190,12 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           keyboardType: TextInputType.name,
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter registered name';
-            if (value.length < 3) return 'Name must be at least 3 characters';
+            }
+            if (value.length < 3) {
+              return 'Name must be at least 3 characters';
+            }
             return null;
           },
         ),
@@ -217,8 +207,9 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           keyboardType: TextInputType.number,
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter CNIC number';
+            }
             if (!RegExp(r'^\d{5}-\d{7}-\d{1}$').hasMatch(value)) {
               return 'Use CNIC format XXXXX-XXXXXXX-X';
             }
@@ -233,8 +224,9 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           keyboardType: TextInputType.number,
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter NTN number';
+            }
             if (!RegExp(r'^\d{7}-\d$').hasMatch(value)) {
               return 'Use NTN format 1234567-8';
             }
@@ -248,8 +240,9 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           hint: 'AA-123456',
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter STRN number';
+            }
             if (!RegExp(r'^[A-Z]{2}-\d{6}$').hasMatch(value)) {
               return 'Use STRN format AA-123456';
             }
@@ -264,8 +257,9 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           keyboardType: TextInputType.phone,
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter contact number';
+            }
             if (!RegExp(r'^\+92-\d{3}-\d{7}$').hasMatch(value)) {
               return 'Use phone format +92-XXX-XXXXXXX';
             }
@@ -280,8 +274,9 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           keyboardType: TextInputType.url,
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter web address';
+            }
             final urlRegex = RegExp(r'^(https?:\/\/)?([\w-]+\.)+[\w-]+$');
             if (!urlRegex.hasMatch(value.trim())) {
               return 'Please enter a valid web address';
@@ -359,8 +354,9 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           keyboardType: TextInputType.emailAddress,
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter email address';
+            }
             if (!RegExp(r'^[^@]+@[^@]+\.[^@]+$').hasMatch(value.trim())) {
               return 'Please enter a valid email address';
             }
@@ -376,9 +372,12 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           onTap: canEdit
               ? () => _pickDate(controller: fiscalStartDateController)
               : null,
-          validator: (value) => (value == null || value.isEmpty)
-              ? 'Please select fiscal start date'
-              : null,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please select fiscal start date';
+            }
+            return null;
+          },
         ),
         const SizedBox(height: 16),
         // Checkbox + Switch + segmented choice
@@ -489,10 +488,12 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           maxLines: 4,
           readOnly: !canEdit,
           validator: (value) {
-            if (value == null || value.isEmpty)
+            if (value == null || value.isEmpty) {
               return 'Please enter terms and conditions';
-            if (value.length < 10)
+            }
+            if (value.length < 10) {
               return 'Terms should be at least 10 characters';
+            }
             return null;
           },
         ),

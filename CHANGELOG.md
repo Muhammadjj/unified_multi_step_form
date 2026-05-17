@@ -10,3 +10,10 @@
 - Added example UI widgets: checkbox, switch, segmented choice, and image picker.
 - Expanded README with usage, testing, and release checklist.
 - Added license file and extra tests for async and page-view flows.
+
+## 1.1.2
+
+- Switched the license to MIT so pub.dev can recognize it.
+- Added a proper `example/` Flutter app structure for pub.dev.
+- Added missing API documentation and package-level docs.
+- Updated the package version for a fresh pub.dev publish.

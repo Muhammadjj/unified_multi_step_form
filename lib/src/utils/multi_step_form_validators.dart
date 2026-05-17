@@ -1,5 +1,10 @@
 /// Common validation helpers for multi-step forms.
 class MultiStepFormValidators {
+  /// Creates a validation helper namespace.
+  ///
+  /// This class is designed for static helper methods only.
+  const MultiStepFormValidators._();
+
   /// Checks that a value is present.
   static String? required(
     String? value, {
