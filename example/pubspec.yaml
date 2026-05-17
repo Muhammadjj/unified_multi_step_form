@@ -8,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^0.8.7+6
+  image_picker: ^1.2.2
   unified_multi_step_form:
     path: ..
 

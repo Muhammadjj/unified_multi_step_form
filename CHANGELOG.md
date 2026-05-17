@@ -11,7 +11,7 @@
 - Expanded README with usage, testing, and release checklist.
 - Added license file and extra tests for async and page-view flows.
 
-## 1.1.2
+## 1.1.3
 
 - Switched the license to MIT so pub.dev can recognize it.
 - Added a proper `example/` Flutter app structure for pub.dev.
