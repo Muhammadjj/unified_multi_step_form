@@ -1,7 +1,27 @@
-# https://dart.dev/guides/libraries/private-files
-# Created by `dart pub`
+# Flutter / Dart
 .dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+.packages
+build/
 
-# Avoid committing pubspec.lock for library packages; see
-# https://dart.dev/guides/libraries/private-files#pubspeclock.
+# Generated lockfile for library packages
 pubspec.lock
+
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+
+# Platform-specific generated files
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# Misc
+.DS_Store
