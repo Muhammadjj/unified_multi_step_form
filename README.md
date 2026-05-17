@@ -145,4 +145,36 @@ flutter test
 
 ## License
 
+## Publishing to pub.dev
+
+- Before publishing, ensure the following in your package root:
+  - `pubspec.yaml` contains `name`, `description`, `version`, `environment` (Dart/Flutter SDK), `repository`/`homepage`, and `license`.
+  - Include `README.md`, `CHANGELOG.md`, `LICENSE`, an `example/` folder, and tests under `test/`.
+  - Do NOT have `publish_to: none` in `pubspec.yaml`.
+  - Bump the package `version` for each new release and update `CHANGELOG.md`.
+
+- Local checks (run from package root):
+
+```bash
+flutter analyze
+flutter test
+flutter pub publish --dry-run
+```
+
+- If the dry-run succeeds, publish interactively:
+
+```bash
+flutter pub publish
+```
+
+- Authentication: `flutter pub publish` is interactive and will open a browser to sign in the first time. For CI/automation, create an API token on pub.dev (Account → API access) and follow pub.dev documentation to configure your CI to use that token.
+
+- After a successful publish:
+  - Tag the release in your VCS (e.g., `git tag vX.Y.Z` and `git push --tags`).
+  - Verify the package page on https://pub.dev and update any README screenshots or metadata as needed.
+
+See pub.dev docs for advanced publishing / CI setup.
+
+## License
+
 See `LICENSE`.
