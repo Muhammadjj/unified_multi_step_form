@@ -21,18 +21,18 @@ A reusable Flutter package for state-preserving multi-step forms.
 
 ## Screenshots
 
-Add your screenshots here to show the package UI in action. Keep them in `example/screenshots/` so the README stays tidy.
+Add your screenshots here to show the package UI in action. Keep them in example/screenshots/ so the README stays tidy.
 
 <table>
   <tr>
     <td align="center">
-      <img src="example/screenshots/Screenshot_2026-05-20-18-00-21-147_com.example.unified_multi_step_form_example.jpg" alt="Step 1 screenshot" width="250" />
+      <img src="example/screenshots/step-1-form.jpg" alt="Step 1 screenshot" width="250" />
     </td>
     <td align="center">
-      <img src="example/screenshots/Screenshot_2026-05-20-18-00-42-251_com.example.unified_multi_step_form_example.jpg" alt="Step 2 screenshot" width="250" />
+      <img src="example/screenshots/step-2-form.jpg" alt="Step 2 screenshot" width="250" />
     </td>
     <td align="center">
-      <img src="example/screenshots/Screenshot_2026-05-20-18-04-50-435_com.example.unified_multi_step_form_example.jpg" alt="Review screenshot" width="250" />
+      <img src="example/screenshots/review-screen.jpg" alt="Review screenshot" width="250" />
     </td>
   </tr>
   <tr>
@@ -48,6 +48,17 @@ Recommended captures:
 - PageView mode with slide transition
 - fields, checkbox, switch, segmented choice, and image picker
 - final review card
+
+## Video
+
+<p align="center">
+  <video width="80%" controls>
+    <source src="example/videos/demo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</p>
+
+If the video does not render in your GitHub viewer, open example/videos/demo.mp4 directly.
 
 ## Install
 
