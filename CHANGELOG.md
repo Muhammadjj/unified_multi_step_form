@@ -17,3 +17,9 @@
 - Added a proper `example/` Flutter app structure for pub.dev.
 - Added missing API documentation and package-level docs.
 - Updated the package version for a fresh pub.dev publish.
+
+## 1.1.4
+
+- Updated README screenshots and video section.
+- Renamed example media files to cleaner filenames.
+- Prepared the package for the next pub.dev publish.
