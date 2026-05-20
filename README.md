@@ -23,9 +23,12 @@ A reusable Flutter package for state-preserving multi-step forms.
 
 Add your own screenshots here to show the package UI in action.
 
-| Step flow | Review screen |
+| Step flow |
 | --- | --- |
-| `example/screenshots/step-flow.png` | `example/screenshots/review-screen.png` |
+| `<img width="1080" height="2400" alt="Screenshot_2026-05-20-18-00-21-147_com example unified_multi_step_form_example" src="https://github.com/user-attachments/assets/93bfadde-bb90-4485-a44e-e93fd3c23411" />
+` | `<img width="1080" height="2400" alt="Screenshot_2026-05-20-18-00-42-251_com example unified_multi_step_form_example" src="https://github.com/user-attachments/assets/ec55a866-936b-4e0e-9041-bdb39e931916" />
+` | `<img width="1080" height="2400" alt="Screenshot_2026-05-20-18-04-50-435_com example unified_multi_step_form_example" src="https://github.com/user-attachments/assets/35e56692-3ffb-4ad7-b56a-ee7e577dbf8e" />
+` |
 
 Recommended captures:
 
