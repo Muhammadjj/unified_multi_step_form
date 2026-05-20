@@ -687,8 +687,8 @@ class _CompanyInfoDemoScreenState extends State<CompanyInfoDemoScreen> {
           controller: _controller,
           usePageView: true,
           transitionType: TransitionType.slide,
-          indicatorType: IndicatorType.numbers,
-          indicatorActiveColor: Colors.red,
+          indicatorType: IndicatorType.dots,
+          indicatorActiveColor: Colors.lime,
           pages: [
             MultiStepFormPage(
               formKey: _step0Key,
